@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reddit Sentiment Analysis</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link href="https://api.fontshare.com/v2/css?f[]=neco@400&f[]=pally@500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1117d1fa66.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Reddit Sentiment Analysis</h1> 
+    <div class="search-bar"> 
+      <input type="text" id="productName" placeholder="Enter product name">
+      <button onclick="generateImage()"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="loader" id="loader"></div>
+    <div id="imageAndComments">
+      <div id="imageContainer" style="display: none;">
+        <img id="generatedImage" alt="Generated Image">
+      </div>
+      <div id="topCommentsScored" style="display: none;">
+        <div id="topPositiveScored" class="comment-card">
+          <i class="fa-solid fa-quote-left fa-beat-fade" style="color: #727479;"></i>
+          <h3>Top Positive Comments</h3>
+          <p></p>
+        </div>
+        <div id="topNegativeScored" class="comment-card">
+          <i class="fa-solid fa-quote-left fa-beat-fade" style="color: #727479;"></i>
+          <h3>Top Negative Comments</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
