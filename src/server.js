@@ -11,6 +11,7 @@ app.use(express.static('public'));
 function executePythonScript(productName) {
   return new Promise((resolve, reject) => {
     const command = `python ${path.join(__dirname, '..', 'python', 'SentimentAnalysis.py')} ${productName}`;
+    console.log('Executing command:', command);
 
     exec(command, (error, stdout, stderr) => {
       if (error) {
