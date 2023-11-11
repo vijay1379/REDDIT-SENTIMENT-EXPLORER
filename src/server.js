@@ -8,27 +8,40 @@ const app = express();
 app.use(express.static('public'));
 
 // Function to execute the Python script to generate the image and JSON
-function executePythonScript(productName) {
-  return new Promise((resolve, reject) => {
-    const command = `python ${path.join(__dirname, '..', 'python', 'SentimentAnalysis.py')} ${productName}`;
-    console.log('Executing command:', command);
+function generateImage() {
+  var productName = document.getElementById('productName').value;
 
-    exec(command, (error, stdout, stderr) => {
-      if (error) {
-        console.error('Failed to start Python process:', error);
-        reject(error);
+  document.getElementById('loader').style.display = 'block';
+
+  // Correct URL construction
+  fetch(`https://redit-sentiment-analyser.onrender.com/getDataAndImage/${productName}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
       }
-
-      if (stderr) {
-        console.error('Python script execution error:', stderr);
-        reject(stderr);
+      return response.json();
+    })
+    .then(data => {
+      if (data.imagePath) {
+        const imageSrc = `https://redit-sentiment-analyser.onrender.com${data.imagePath}`;
+        const img = document.getElementById('generatedImage');
+        img.onload = function() {
+          document.getElementById('imageContainer').style.display = 'block';
+          document.getElementById('loader').style.display = 'none';
+          displayComments(data.comments);
+        };
+        img.src = imageSrc;
+      } else {
+        document.getElementById('loader').style.display = 'none';
       }
-
-      console.log(`Python script output: ${stdout}`);
-      resolve();
+    })
+    .catch(error => {
+      console.error('Error fetching image and data:', error);
+      alert('Failed to fetch image and data.');
+      document.getElementById('loader').style.display = 'none';
     });
-  });
 }
+
 
 // Endpoint to execute Python script and serve JSON and image
 app.get('/getDataAndImage/:product_name', async (req, res) => {
