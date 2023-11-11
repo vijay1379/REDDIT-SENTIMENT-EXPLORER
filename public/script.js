@@ -3,7 +3,7 @@ function generateImage() {
 
   document.getElementById('loader').style.display = 'block';
 
-  fetch(`https://redit-sentiment-analyser.onrender.com/${productName}`)
+  fetch(`https://redit-sentiment-analyser.onrender.com${productName}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok.');
