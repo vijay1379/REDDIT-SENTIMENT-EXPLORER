@@ -3,7 +3,7 @@ function generateImage() {
 
   document.getElementById('loader').style.display = 'block';
 
-  fetch(`http://localhost:3000/getDataAndImage/${productName}`)
+  fetch(`https://redit-sentiment-analyser.onrender.com/${productName}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok.');
@@ -12,7 +12,7 @@ function generateImage() {
     })
     .then(data => {
       if (data.imagePath) {
-        const imageSrc = `http://localhost:3000${data.imagePath}`;
+        const imageSrc = `https://redit-sentiment-analyser.onrender.com/${data.imagePath}`;
         const img = document.getElementById('generatedImage');
         img.onload = function() {
           document.getElementById('imageContainer').style.display = 'block';
