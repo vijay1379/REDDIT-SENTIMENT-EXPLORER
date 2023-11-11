@@ -1,0 +1,15 @@
+{
+  "name": "reddit-sentiment-server",
+  "version": "1.0.0",
+  "description": "Reddit Sentiment Analyzer Server",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "praw": "^7.4.0",
+    "nltk": "^3.6.5"
+  }
+}
