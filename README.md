@@ -1,46 +1,63 @@
-# Reddit Sentiment Analysis Web Application
+# Reddit-Sentiment-Explorer
+https://github.com/vijay1379/REDDIT-SENTIMENT-EXPLORER/assets/117030617/8dafa030-f492-440e-9706-0f0bae673c55
 
+## Project Overview
 
-
-## Overview
-The Reddit Sentiment Analysis Web Application is designed to analyze sentiments of comments related to specific products or topics on Reddit. The application provides a visual representation of sentiment analysis results using a pie chart and displays the top positive and negative comments from the Reddit community.
+The Reddit Sentiment Analyzer is a web application that leverages the Reddit API to analyze sentiment in comments related to a specific product or topic. Unlike traditional sentiment analysis tools, this project focuses on server-side code execution, providing real-time insights into Reddit community sentiments.
 
 ## Features
-- **User Interface:** Developed a responsive and user-friendly interface with HTML, CSS, and JavaScript.
-- **Real-time Backend:** Implemented a Node.js backend for instant updates and improved user engagement.
-- **Sentiment Analysis:** Integrated Python scripts for sentiment analysis, achieving a notable 35% improvement in accuracy.
 
-## Website Hosting
-The Reddit Sentiment Analysis Web Application is hosted on Render at [your_render_url_here]. Visit the website to analyze sentiments, view visualizations, and explore top comments on Reddit.
+- **Sentiment Analysis:** Analyzes comments from the Reddit community to determine sentiment.
+- **Real-Time Delivery Tracking:** Provides real-time updates and insights into sentiment changes.
+- **Dynamic Visualization:** Displays sentiment analysis results through a visually appealing pie chart.
+- **Top Comments Display:** Showcases the top positive and negative comments from the Reddit community.
 
-## Installation and Hosting on Render
-To host the Node.js website on Render, follow these steps:
 
-1. **Create an Account on Render:**
-   - Sign up for a Render account at [https://render.com](https://render.com).
+## Technologies Used
 
-2. **Create a New Web Service:**
-   - Click on "Create" in your Render dashboard.
-   - Choose "Web Service" as the environment.
-   - Connect your GitHub repository.
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express
+- **Data Analysis:** NLTK (Natural Language Toolkit)
 
-3. **Configure the Web Service:**
-   - Set the build command to `npm install && npm start`.
-   - Set the start command to the appropriate command for your Node.js app (e.g., `node server.js`).
+## Local Hosting
 
-4. **Deploy the Web Service:**
-   - Click on "Create Web Service" to deploy your Node.js website.
+### Prerequisites
 
-5. **Access Your Website:**
-   - Once deployed, your website will be accessible at the provided Render URL.
+- [Node.js](https://nodejs.org/) installed on your machine.
+- Python Latest Version
 
-## Usage
-- Specify the product or topic of interest.
-- Explore the sentiment analysis results through the pie chart.
-- Scroll through the top positive and negative comments for deeper insights.
+### 1. Initialize Your Project
 
-## Contributions
-Contributions are welcome! Feel free to open issues or submit pull requests.
+Open a terminal and navigate to your project directory. Run the following commands:
+
+```
+npm init -y
+```
+
+### 2. Install Dependencies
+Install the necessary dependencies for your project. Run the following command:
+
+```
+npm install express body-parser nltk
+```
+
+```
+pip install -r requirements.txt
+```
+
+### 3. Run Your Server
+Then run the server:
+```
+node start
+```
+
+## Contributing
+
+Thank you for considering contributing to this project! Contributions are highly appreciated.
+
+### Issues
+
+If you find any issues or have suggestions for improvements, please open an issues
 
 
 ## Contact
